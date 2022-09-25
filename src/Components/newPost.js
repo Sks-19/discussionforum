@@ -30,7 +30,7 @@ const NewPost = () => {
     console.log(postTime);
 
     if (title === "" || name === "" || post === "") {
-      //
+      alert("All field are required !");
     } else {
       const obj = {
         id: id,

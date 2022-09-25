@@ -27,7 +27,7 @@ const Detail = () => {
     postTime.slice(5, 25);
 
     if (userName === "" || comment === "") {
-      alert("All feild required !");
+      alert("All fields are required !");
     } else {
       let commentObj = {
         name: userName,
