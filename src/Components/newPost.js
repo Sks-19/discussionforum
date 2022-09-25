@@ -5,14 +5,14 @@ import { BiArrowBack } from "react-icons/bi";
 
 const NewPost = () => {
   //Upload image
-  let url;
+  let image_link;
   const handleChange = (e) => {
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     console.log(e.target.files[0]);
     console.log("reader", reader);
     reader.onload = () => {
-      url = reader.result;
+      image_link = reader.result;
     };
     document.getElementById("file-name").textContent = e.target.files[0].name;
   };
@@ -22,7 +22,7 @@ const NewPost = () => {
 
     const id = get.length + 1;
     const title = document.getElementById("heading").value;
-    const inputImage = url;
+    const inputImage = image_link;
     const category = document.getElementById("category").value;
     const name = document.getElementById("username").value;
     const post = document.getElementById("textarea").value;
