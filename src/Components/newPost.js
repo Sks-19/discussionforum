@@ -9,8 +9,6 @@ const NewPost = () => {
   const handleChange = (e) => {
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
-    console.log(e.target.files[0]);
-    console.log("reader", reader);
     reader.onload = () => {
       image_link = reader.result;
     };
@@ -18,6 +16,7 @@ const NewPost = () => {
   };
 
   const handleClick = (e) => {
+    console.log("clicked");
     let get = JSON.parse(localStorage.getItem("postData") || []);
 
     const id = get.length + 1;
@@ -46,7 +45,9 @@ const NewPost = () => {
       get.push(obj);
       localStorage.setItem("postData", JSON.stringify(get));
       alert("Post successfully created!");
-      window.location.replace("/discussionforum");
+      document.getElementById("heading").value = "";
+      document.getElementById("username").value = "";
+      document.getElementById("textarea").value = "";
     }
   };
 
@@ -106,7 +107,6 @@ const NewPost = () => {
                 onChange={handleChange}
                 name="image"
                 accept="image/*"
-                required
               />
               <label htmlFor="upload-image" className="btn btn-primary">
                 <FaUpload /> &nbsp; Choose A Photo
