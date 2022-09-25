@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/discussionforum/static/css/main.04224545.css",
+    "main.js": "/discussionforum/static/js/main.8550563d.js",
+    "index.html": "/discussionforum/index.html",
+    "main.04224545.css.map": "/discussionforum/static/css/main.04224545.css.map",
+    "main.8550563d.js.map": "/discussionforum/static/js/main.8550563d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04224545.css",
+    "static/js/main.8550563d.js"
+  ]
+}
