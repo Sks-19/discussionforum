@@ -1,11 +1,9 @@
 import "./newPost.scss";
-import { useNavigate } from "react-router-dom";
-import { FaAngleLeft, FaUpload } from "react-icons/fa";
-import { Navigate, NavLink } from "react-router-dom";
+import { FaUpload } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 
 const NewPost = () => {
-  const navigate = useNavigate();
   //Upload image
   let url;
   const handleChange = (e) => {
@@ -28,7 +26,8 @@ const NewPost = () => {
     const category = document.getElementById("category").value;
     const name = document.getElementById("username").value;
     const post = document.getElementById("textarea").value;
-    const postTime = new Date().toUTCString().slice(5, 25);
+    const postTime = new Date().toUTCString().slice(5, 16);
+    console.log(postTime);
 
     if (title === "" || name === "" || post === "") {
       //
@@ -127,7 +126,7 @@ const NewPost = () => {
           </div>
           <div className="form-group py-4">
             <button
-              type="submit"
+              type="reset"
               className="btn btn-success"
               onClick={handleClick}
             >

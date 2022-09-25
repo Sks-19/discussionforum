@@ -23,7 +23,7 @@ const Detail = () => {
     e.preventDefault();
     const userName = document.getElementById("user-name").value;
     const comment = document.getElementById("message").value;
-    const postTime = new Date().toUTCString().slice(5, 25);
+    const postTime = new Date().toUTCString().slice(5, 16);
     postTime.slice(5, 25);
 
     if (userName === "" || comment === "") {
