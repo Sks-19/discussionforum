@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/discussionforum/static/css/main.04224545.css",
-    "main.js": "/discussionforum/static/js/main.89165d0f.js",
+    "main.css": "/discussionforum/static/css/main.8819ed2a.css",
+    "main.js": "/discussionforum/static/js/main.8640a4b2.js",
     "index.html": "/discussionforum/index.html",
-    "main.04224545.css.map": "/discussionforum/static/css/main.04224545.css.map",
-    "main.89165d0f.js.map": "/discussionforum/static/js/main.89165d0f.js.map"
+    "main.8819ed2a.css.map": "/discussionforum/static/css/main.8819ed2a.css.map",
+    "main.8640a4b2.js.map": "/discussionforum/static/js/main.8640a4b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.04224545.css",
-    "static/js/main.89165d0f.js"
+    "static/css/main.8819ed2a.css",
+    "static/js/main.8640a4b2.js"
   ]
 }
