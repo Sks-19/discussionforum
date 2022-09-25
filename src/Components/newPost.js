@@ -30,7 +30,7 @@ const NewPost = () => {
     console.log(postTime);
 
     if (title === "" || name === "" || post === "") {
-      alert("All field are required !");
+      //
     } else {
       const obj = {
         id: id,
@@ -46,6 +46,7 @@ const NewPost = () => {
       get.push(obj);
       localStorage.setItem("postData", JSON.stringify(get));
       alert("Post successfully created!");
+      window.location.replace("/discussionforum");
     }
   };
 
@@ -126,7 +127,7 @@ const NewPost = () => {
           </div>
           <div className="form-group py-4">
             <button
-              type="reset"
+              type="submit"
               className="btn btn-success"
               onClick={handleClick}
             >
