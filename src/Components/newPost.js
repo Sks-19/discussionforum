@@ -47,7 +47,7 @@ const NewPost = () => {
       get.push(obj);
       localStorage.setItem("postData", JSON.stringify(get));
       alert("Post successfully created!");
-      window.location.assign("/discussionforum");
+      window.location.reload();
     }
   };
 
