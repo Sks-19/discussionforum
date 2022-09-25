@@ -71,7 +71,7 @@ const Detail = () => {
               <div className="card my-3">
                 <div className="row">
                   <div className="col-2 px-4 py-2">
-                    <NavLink to="/" className="btn btn-info">
+                    <NavLink to="/discussionforum" className="btn btn-info">
                       Back
                     </NavLink>
                   </div>

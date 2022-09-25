@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/discussionforum" element={<Home />} />
         <Route path="/createpost" element={<Post />} />
         <Route path="/details" element={<Detail />} />
       </Routes>
