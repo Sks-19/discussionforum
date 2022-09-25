@@ -31,7 +31,7 @@ const NewPost = () => {
     const postTime = new Date().toUTCString().slice(5, 25);
 
     if (title === "" || name === "" || post === "") {
-      window.length = window.location;
+      //
     } else {
       const obj = {
         id: id,
@@ -47,7 +47,6 @@ const NewPost = () => {
       get.push(obj);
       localStorage.setItem("postData", JSON.stringify(get));
       alert("Post successfully created!");
-      window.location.reload();
     }
   };
 
