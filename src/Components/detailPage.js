@@ -20,23 +20,28 @@ const Detail = () => {
   const showData = postData?.filter((post) => post.id === state.id);
 
   const handleComment = (e) => {
+    e.preventDefault();
     const userName = document.getElementById("user-name").value;
     const comment = document.getElementById("message").value;
     const postTime = new Date().toUTCString().slice(5, 25);
     postTime.slice(5, 25);
 
-    let commentObj = {
-      name: userName,
-      comment: comment,
-      likes: 0,
-      postDate: postTime,
-    };
+    if (userName === "" || comment === "") {
+      alert("All feild required !");
+    } else {
+      let commentObj = {
+        name: userName,
+        comment: comment,
+        likes: 0,
+        postDate: postTime,
+      };
 
-    postData[state.id - 1].comments?.push(commentObj);
+      postData[state.id - 1].comments?.push(commentObj);
 
-    setUserComment(postData[state.id - 1].comments);
+      setUserComment(postData[state.id - 1].comments);
 
-    localStorage.setItem("postData", JSON.stringify(postData));
+      localStorage.setItem("postData", JSON.stringify(postData));
+    }
   };
 
   const handleLike = (e) => {
@@ -110,32 +115,36 @@ const Detail = () => {
           );
         })}
         <div className="container card  bg-white">
-          <div className="form-group py-2">
-            <input
-              type="text"
-              className="form-control"
-              id="user-name"
-              placeholder="What is your name?"
-            />
-          </div>
-          <div className="form-group py-2">
-            <label htmlFor="message"></label>
-            <textarea
-              className="form-control"
-              id="message"
-              rows="4"
-              placeholder="Start discussing here"
-            ></textarea>
-          </div>
-          <div className="form-group py-2">
-            <button
-              type="submit"
-              className="btn btn-secondary"
-              onClick={handleComment}
-            >
-              Post Comment
-            </button>
-          </div>
+          <form>
+            <div className="form-group py-2">
+              <input
+                type="text"
+                className="form-control"
+                id="user-name"
+                placeholder="What is your name?"
+                required
+              />
+            </div>
+            <div className="form-group py-2">
+              <label htmlFor="message"></label>
+              <textarea
+                className="form-control"
+                id="message"
+                rows="4"
+                placeholder="Start discussing here"
+                required
+              ></textarea>
+            </div>
+            <div className="form-group py-2">
+              <button
+                type="submit"
+                className="btn btn-secondary"
+                onClick={handleComment}
+              >
+                Post Comment
+              </button>
+            </div>
+          </form>
         </div>
         <div>
           <h3 className="my-2">Comments -</h3>

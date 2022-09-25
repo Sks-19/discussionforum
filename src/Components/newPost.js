@@ -1,8 +1,11 @@
 import "./newPost.scss";
-import { FaUpload } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FaAngleLeft, FaUpload } from "react-icons/fa";
+import { Navigate, NavLink } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
 
 const NewPost = () => {
+  const navigate = useNavigate();
   //Upload image
   let url;
   const handleChange = (e) => {
@@ -27,26 +30,43 @@ const NewPost = () => {
     const post = document.getElementById("textarea").value;
     const postTime = new Date().toUTCString().slice(5, 25);
 
-    const obj = {
-      id: id,
-      title: title,
-      category: category,
-      image: inputImage,
-      name: name,
-      post: post,
-      likes: 0,
-      time: postTime,
-      comments: [],
-    };
-    get.push(obj);
-    localStorage.setItem("postData", JSON.stringify(get));
+    if (title === "" || name === "" || post === "") {
+      window.length = window.location;
+    } else {
+      const obj = {
+        id: id,
+        title: title,
+        category: category,
+        image: inputImage,
+        name: name,
+        post: post,
+        likes: 0,
+        time: postTime,
+        comments: [],
+      };
+      get.push(obj);
+      localStorage.setItem("postData", JSON.stringify(get));
+      alert("Post successfully created!");
+      window.location.assign("/discussionforum");
+    }
   };
 
   return (
     <>
       <div className="card m-4 p-4" style={{ textAlign: "center" }}>
-        <div className="">
-          <h3>Create New Post</h3>
+        <div className="row">
+          <div className="col-2">
+            <NavLink
+              to="/discussionforum"
+              className="btn btn-white"
+              style={{ width: "5rem", height: "3rem" }}
+            >
+              <BiArrowBack style={{ fontSize: "2rem" }} />
+            </NavLink>
+          </div>
+          <div className="col-10">
+            <h3>Create New Post</h3>
+          </div>
           <hr></hr>
         </div>
         <form>
@@ -57,6 +77,7 @@ const NewPost = () => {
                 className="form-control"
                 id="heading"
                 placeholder="What this post is about?"
+                required
               />
             </div>
             <div className="col-lg-2 form-group py-4">
@@ -75,6 +96,7 @@ const NewPost = () => {
                 className="form-control"
                 id="username"
                 placeholder="What is your name?"
+                required
               />
             </div>
 
@@ -85,6 +107,7 @@ const NewPost = () => {
                 onChange={handleChange}
                 name="image"
                 accept="image/*"
+                required
               />
               <label htmlFor="upload-image" className="btn btn-primary">
                 <FaUpload /> &nbsp; Choose A Photo
@@ -100,17 +123,17 @@ const NewPost = () => {
               id="textarea"
               rows="5"
               placeholder="Write a descriptive post here."
+              required
             ></textarea>
           </div>
           <div className="form-group py-4">
-            <NavLink
-              to="/discussionforum"
+            <button
               type="submit"
               className="btn btn-success"
               onClick={handleClick}
             >
               Create Post
-            </NavLink>
+            </button>
           </div>
         </form>
       </div>
