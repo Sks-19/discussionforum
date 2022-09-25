@@ -23,7 +23,7 @@ const DiscussionPage = (props) => {
       {props.postData?.map((data) => {
         return (
           <>
-            <div className="card my-3">
+            <div className="card my-3 bg-white">
               <NavLink
                 className="Navlink"
                 to={{ pathname: "/details" }}
@@ -31,7 +31,13 @@ const DiscussionPage = (props) => {
               >
                 <div className="row">
                   <div className="col-2 p-4">
-                    <img src={data.image} alt="" width="50px" height="50px" />
+                    <img
+                      src={data.image}
+                      alt=""
+                      className="rounded-circle"
+                      width="50px"
+                      height="50px"
+                    />
                   </div>
                   <div className="col-10">
                     <div className="col card-body">

@@ -1,5 +1,6 @@
 import "./newPost.scss";
 import { FaUpload } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const NewPost = () => {
   //Upload image
@@ -16,7 +17,6 @@ const NewPost = () => {
   };
 
   const handleClick = (e) => {
-    e.preventDefault();
     let get = JSON.parse(localStorage.getItem("postData") || []);
 
     const id = get.length + 1;
@@ -103,13 +103,14 @@ const NewPost = () => {
             ></textarea>
           </div>
           <div className="form-group py-4">
-            <button
+            <NavLink
+              to="/discussionforum"
               type="submit"
               className="btn btn-success"
               onClick={handleClick}
             >
               Create Post
-            </button>
+            </NavLink>
           </div>
         </form>
       </div>

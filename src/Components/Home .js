@@ -32,10 +32,10 @@ const Home = () => {
           <hr></hr>
         </div>
         <div className="row">
-          <div className="col-8 col-lg-10">
+          <div className="col-12 col-lg-10 py-2">
             <Search setSearchItem={setSearchItem} />
           </div>
-          <div className="col-4 col-lg-2">
+          <div className="col-12 col-lg-2 py-2">
             <NavLink
               to="/createpost"
               className="btn btn-primary"

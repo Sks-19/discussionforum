@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FcLikePlaceholder } from "react-icons/fc";
+import { BiArrowBack } from "react-icons/bi";
 import { useEffect, useState } from "react";
 
 const Detail = () => {
@@ -68,11 +69,15 @@ const Detail = () => {
         {showData?.map((post) => {
           return (
             <>
-              <div className="card my-3">
+              <div className="card my-3  bg-white">
                 <div className="row">
-                  <div className="col-2 px-4 py-2">
-                    <NavLink to="/discussionforum" className="btn btn-info">
-                      Back
+                  <div className="col-2 p-3">
+                    <NavLink
+                      to="/discussionforum"
+                      className="btn btn-white"
+                      style={{ width: "5rem", height: "3rem" }}
+                    >
+                      <BiArrowBack style={{ fontSize: "2rem" }} />
                     </NavLink>
                   </div>
                   <div className="col-10 px-4 py-2">
@@ -82,7 +87,13 @@ const Detail = () => {
                 </div>
                 <div className="row">
                   <div className="col-2 p-4">
-                    <img src={post.image} alt="" width="50px" height="50px" />
+                    <img
+                      src={post.image}
+                      alt=""
+                      className="rounded-circle"
+                      width="50px"
+                      height="50px"
+                    />
                   </div>
                   <div className="col-10">
                     <div className="col card-body">
@@ -98,7 +109,7 @@ const Detail = () => {
             </>
           );
         })}
-        <div className="container card">
+        <div className="container card  bg-white">
           <div className="form-group py-2">
             <input
               type="text"
@@ -122,7 +133,7 @@ const Detail = () => {
               className="btn btn-secondary"
               onClick={handleComment}
             >
-              Create Post
+              Post Comment
             </button>
           </div>
         </div>
@@ -134,7 +145,7 @@ const Detail = () => {
           return (
             <>
               <div className="container">
-                <div className="card my-2">
+                <div className="card my-2  bg-white">
                   <div className="card-body">
                     <h5 className="card-title">
                       {comment.name}
